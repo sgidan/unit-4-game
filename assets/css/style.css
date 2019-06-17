@@ -1,3 +1,5 @@
+#random
+
 .sections{
     border: 1px solid black;
     align-items: center;
@@ -9,6 +11,8 @@
 
 #randomnumber{
 text-align: center;
+color: red;
+font-size: 20;
 }
 
 .crystals{
@@ -25,16 +29,15 @@ text-align: center;
     display: flex;
     margin: 10px;
 
-    /* justify-content: space-around; */
 }
 
 h1{
     text-align: center;
-    font-size: large;
     padding:40px;
+    width:100%;
 }
 
-.gem-image{
 
-   
+#userscore{
+    text-align: center;
 }
