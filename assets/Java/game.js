@@ -1,43 +1,46 @@
 var randomMatch;
-var lose;
-var win;
+var lose = 0;
+var win = 0;
 userScore = 0;
+var crystalValues;
 
 function start() {
+
     randomMatch = Math.floor(Math.random() * 101 + 19);
     $('#randomnumber').text("Match this Number:" + randomMatch);
     userScore = 0;
-}
+    crystalValues = [];
+    
+    for (var i = 0; i < 4; i++) {
 
+        var randomCN = Math.floor(Math.random() * 11 + 1);
+        crystalValues.push(randomCN)
+        console.log(randomCN);
 
-for (var i = 0; i < 4; i++) {
-    var randomCN = Math.floor(Math.random() * 11 + 1);
-    console.log(randomCN);
-
-
-    var crystal = $('<div>');
-    crystal.addClass('crystal');
-    crystal.attr('value', randomCN)
-    $('.crystals').append(crystal);
+    }
 
 }
 
+start();
 
-//each time you click on a crystal it adds to your score:
-$('.crystal').on('click', function () {
-    var crystalValue = parseInt($(this).attr('value'));
+$('.gem-image').on('click', function () {
+    var crystalIndex = parseInt($(this).attr('value'));
+    crystalValue = crystalValues[crystalIndex];
 
     userScore = userScore + crystalValue;
+    
     $('#userscore').text("Your Score:" + userScore);
 
     if (userScore === randomMatch) {
         alert("You Win!")
-        $("#wins").text("Wins: " + ++win);
+        $("#wins").text("Wins:" + ++win);
+        start();
         console.log(win)
 
     } else if (userScore > randomMatch) {
         alert("You Lose!")
-        $("loses").text("Loses:" + ++lose);
+        $("#loses").text("Loses:" + ++lose);
+        start();
         console.log(lose)
     }
 

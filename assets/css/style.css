@@ -11,23 +11,30 @@
 text-align: center;
 }
 
-
 .crystals{
     display: flex;
-    justify-content: space-around;
-    border:1px solid, yellow;
+    justify-content: center;
     align-items: center;
-    margin-top: 70px;
 }
 
 .crystal{
     border: 1px solid black;
     height: 200px;
     width: 200px;
+    justify-content: center;
+    display: flex;
+    margin: 10px;
+
+    /* justify-content: space-around; */
 }
 
 h1{
     text-align: center;
     font-size: large;
     padding:40px;
+}
+
+.gem-image{
+
+   
 }
